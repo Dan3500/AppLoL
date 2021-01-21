@@ -1,0 +1,63 @@
+.header{
+    top:0;
+    position: sticky;
+    z-index:1;
+    margin:auto;
+    border-bottom:6px solid #418d9d;
+    background-color:#234254;
+    
+}
+.container1{
+    height:120px;
+    border-bottom:1px solid black
+    /*width:100%;*/
+}
+
+.element{
+    margin:auto;
+}
+
+    .iconoHome{
+        margin-left:-10px;
+        margin-top:10px;
+        height:85px;
+        width:85px;
+        transition:.5s;
+    }
+
+        .iconoHome:hover{
+            height:90px;
+            width:90px;
+            transition:.5s;
+        }
+
+    .tituloPrincipal{
+        text-align:center;
+    }  
+
+    .enlacePrincipal{
+        width:20%;
+        text-decoration: none;
+        color:#2b0004;
+        margin-top: 18px;
+        text-decoration: none;
+        text-align:center;
+        letter-spacing: 5px;
+        font-family:"titulos";
+        transition:.5s;
+    }
+        .enlacePrincipal:hover{
+            color:#2b0004;
+            letter-spacing: 10px;
+            transform:scale(1.025);
+            transition:.5s;
+            cursor:pointer;
+        }
+    h1{
+        text-align:center;
+        padding-top:10px;
+    }
+
+    .buscador{
+
+    }
