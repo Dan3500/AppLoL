@@ -13,7 +13,7 @@ class Riot_API extends Model
     function __construct()
     {
         $this->url="https://euw1.api.riotgames.com";
-        $this->token="RGAPI-6c21dcee-f52a-4a7a-8a56-702e037f8c40";
+        $this->token="";
     }
 
     function getUrl(){
