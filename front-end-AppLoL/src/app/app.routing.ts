@@ -4,6 +4,7 @@ import { Routes, RouterModule, Router } from  '@angular/router';
 //IMPORTAR COMPONENTES
 import { HomeComponent } from "./components/home/home.component";
 import { SummonerComponent } from "./components/summoner/summoner.component";
+import { ChampionComponent } from "./components/champion/champion.component";
 //import { IdentityGuard } from './services/identity.guard';  
 
 //DEFINIR LAS RUTAS
@@ -11,6 +12,7 @@ const appRoutes: Routes=[
     {path:'', component:HomeComponent},
     {path:'home', component:HomeComponent},
     {path:'summoner/:name', component:SummonerComponent},
+    {path:'champion/:name', component:ChampionComponent},
     /*{path:'logout/:sure', component:LoginComponent},
     {path:'ajustes', component:UserEditComponent, canActivate: [IdentityGuard]},
     {path:'crear-categoria', component:CategoryNewComponent, canActivate: [IdentityGuard]},

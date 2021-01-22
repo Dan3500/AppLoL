@@ -9,13 +9,15 @@ import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { SummonerComponent } from './components/summoner/summoner.component';
+import { ChampionComponent } from './components/champion/champion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    SummonerComponent
+    SummonerComponent,
+    ChampionComponent
   ],
   imports: [
     BrowserModule,

@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { global } from "./global";
 
 @Injectable()
-export class SummonerInfoService{
+export class ChampionInfoService{
     public api:String;
 
     constructor(private http:HttpClient) {
         this.api=global.url;
      }
 
-    obtenerInfoSummoner(summoner:string):Observable<any>{          
-        return this.http.get(this.api+"/prueba/"+summoner);
+    obtenerInfoChampions():Observable<any>{
+        return this.http.get(this.api+"/champions");
     }
 }

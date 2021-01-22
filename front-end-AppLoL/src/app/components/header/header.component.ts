@@ -27,8 +27,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit(form){
     this._router.navigate(['/summoner/'+this.search])
+    form.reset();
   }
 
 }

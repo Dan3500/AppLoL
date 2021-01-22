@@ -36,6 +36,9 @@ export class SummonerComponent implements OnInit {
         },
         error=>{
           console.log(error)
+          this.summoner.img="error";
+          this.summoner.lvl=0;
+          this.summoner.username="error";
         }
       )
     })

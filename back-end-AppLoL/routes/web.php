@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\PruebasController;
+use App\Http\Controllers\ChampionsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +22,5 @@ Route::get('/', function () {
 
 //RUTA DE PRUEBA
 Route::get("/prueba/{summoner}",[PruebasController::class,'index']);
+
+Route::get("/champions",[ChampionsController::class,'showAll']);
