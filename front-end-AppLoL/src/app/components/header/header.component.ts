@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { SummonerInfoService } from '../../services/summonerInfo.service';
 import { BuscadorService } from '../../services/buscador.service';
+import { FormsModule } from "@angular/forms";
 import { Summoner } from '../../models/summoner';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -27,9 +28,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form){
+  onSubmit(){
     this._router.navigate(['/summoner/'+this.search])
-    form.reset();
+    //form.reset();
   }
 
 }

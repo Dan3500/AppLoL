@@ -1,15 +1,34 @@
 .tituloPrincipal{
     text-align:center;
     margin:auto;
+    color: lightblue;
 }
 
 .version{
     text-align:center;
+    color: lightblue;
 }
 
 .contenidoHome{
+   
 }
 
 .champ{
     text-align:center;
+}
+
+.champLink{
+    color:lightblue;
+    text-decoration: none;
+}
+    .champLink:hover{
+        color:aqua;
+        text-decoration: none;
+    }
+
+.imgChamp{
+    border:1px solid black;
+}
+.imgChamp:hover{
+    border:1px solid blue;
 }

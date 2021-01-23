@@ -8,13 +8,13 @@
                 <h1 class="tituloPrincipal"><a [routerLink]="['/home']" class="enlacePrincipal">LEAGUE OF PROS</a></h1>
             </div>
             <div class="element col-4 buscador">
-                <form class="d-flex mr-0" #summonerForm='ngForm' (ngSubmit)='onSubmit(summonerForm)'>
+                <form class="d-flex mr-0" #summonerForm='ngForm' (ngSubmit)='onSubmit()'>
                     <input type="search" name="tittle" #tittle="ngModel" [(ngModel)]="search" 
                         placeholder="Buscar Campeón/Invocador" class="form-control me-2" required />
                      <input type="submit" value="Buscar" class="btn btn-success" [disabled]="summonerForm.invalid" />
                  </form>
             </div>
-            <div class="collapse navbar-collapse element col-4" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse element col-3" id="navbarSupportedContent">
                 <ul class="element navbar-nav navbar-right">
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Login</a>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as jQuery from 'jquery';
 import { SummonerInfoService } from '../../services/summonerInfo.service';
 import { ChampionInfoService } from '../../services/championService';
 import { Summoner } from '../../models/summoner';
