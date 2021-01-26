@@ -24,3 +24,5 @@ Route::get('/', function () {
 Route::get("/prueba/{summoner}",[PruebasController::class,'index']);
 
 Route::get("/champions",[ChampionsController::class,'showAll']);
+
+Route::get("/champion/{champName}",[ChampionsController::class,'showChamp']);

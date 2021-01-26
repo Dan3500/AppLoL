@@ -14,4 +14,8 @@ export class ChampionInfoService{
     obtenerInfoChampions():Observable<any>{
         return this.http.get(this.api+"/champions");
     }
+
+    obtenerInfoChamp(champ:string):Observable<any>{
+        return this.http.get(this.api+"/champion/"+champ);
+    }
 }

@@ -14,7 +14,7 @@ class Riot_API extends Model
     function __construct()
     {
         $this->url="https://euw1.api.riotgames.com";
-        $this->token="";
+        $this->token="***********************************";
         $this->ddragon="http://ddragon.leagueoflegends.com/cdn";
     }
 

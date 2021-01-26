@@ -1,0 +1,11 @@
+.cajaPrincipal{
+    text-align: center;
+    color:aqua;
+}
+
+.abilityImg{
+    width:75px;
+    height:75px;
+    cursor:pointer;
+    border:1px solid cyan;
+}

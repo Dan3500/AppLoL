@@ -1,1 +1,55 @@
-<p>champion works!</p>
+<div class="cajaPrincipal container-fluid">
+    <h1 class="nombreChamp">{{champ.name}}</h1>
+    <h3>{{champ.title}}</h3>
+    <br>
+    <ngb-carousel class="carrusel">
+        <ng-template ngbSlide="ngbSlide" *ngFor="let skin of champ.skins">
+          <div class="picsum-img-wrapper">
+            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champ.id}}_{{skin.num}}.jpg" class="carruselImg" alt="skin 1">
+          </div>
+          <div class="carousel-caption textos">
+            <h3 class="textos" *ngIf="skin.name=='default'">{{champ.name}}</h3>
+            <h3 class="textos" *ngIf="skin.name!='default'">{{skin.name}}</h3>
+            <br>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <br>  
+      <p class="lore">{{champ.lore}}</p>
+      <br>
+      <div class="abilities row">
+        <h2 class="col-12">HABILIDADES</h2>
+        <div class="col-2">
+            <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/champion/{{champ.id}}.png">
+        </div>
+        <div class="col-10 row">
+            <h4 class="col-12">STATS</h4>
+            <div class="col-6">
+                <ul>
+                    <li>Fuente -></li>
+                    <li *ngFor="let stat of champ.stats | keyvalue">{{stat.key}} - </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul>
+                    <li>{{champ.partype}}</li>
+                    <li *ngFor="let stat of champ.stats | keyvalue">{{stat.value}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 row">
+            <div class="col-4">
+                <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()">
+            </div>
+            <div class="col-2" *ngFor="let ability of champ.spells, index as i" >
+                <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
+            </div>
+            <div class="col-12">
+                <h3>DESCRIPTION</h3>
+                <h4>{{ability.name}}</h4>
+                <p></p>
+            </div>
+        </div>
+      </div>
+</div>
+
