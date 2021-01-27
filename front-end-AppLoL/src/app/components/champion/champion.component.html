@@ -1,55 +1,91 @@
 <div class="cajaPrincipal container-fluid">
-    <h1 class="nombreChamp">{{champ.name}}</h1>
+    <!--<h1 class="nombreChamp">{{champ.name.toUpperCase()}}</h1>
     <h3>{{champ.title}}</h3>
-    <br>
+    <br>-->
     <ngb-carousel class="carrusel">
         <ng-template ngbSlide="ngbSlide" *ngFor="let skin of champ.skins">
+            <div class="carousel-caption textos">
+                <h4 class="textosSkins" *ngIf="skin.name=='default'">{{champ.name}}</h4>
+                <h4 class="textosSkins" *ngIf="skin.name!='default'">{{skin.name}}</h4>
+            </div>
           <div class="picsum-img-wrapper">
             <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champ.id}}_{{skin.num}}.jpg" class="carruselImg" alt="skin 1">
           </div>
-          <div class="carousel-caption textos">
-            <h3 class="textos" *ngIf="skin.name=='default'">{{champ.name}}</h3>
-            <h3 class="textos" *ngIf="skin.name!='default'">{{skin.name}}</h3>
-            <br>
-          </div>
         </ng-template>
-      </ngb-carousel>
-      <br>  
-      <p class="lore">{{champ.lore}}</p>
-      <br>
-      <div class="abilities row">
-        <h2 class="col-12">HABILIDADES</h2>
-        <div class="col-2">
-            <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/champion/{{champ.id}}.png">
+    </ngb-carousel>
+    <br>  
+    <h4>LORE</h4>
+    <p class="lore">{{champ.lore}}</p>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-7 row ab">
+            <h4 class="col-12 tituloAb">HABILIDADES</h4>
+            <div class="col-12 row ab1">
+                <div class="col-4">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()" class="abilityImg">
+                </div>
+                <div class="col-2" *ngFor="let ability of champ.spells, index as i" >
+                    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
+                </div>
+            </div>
+            <div class="col-11 descAb">
+                <h4>
+                    <span *ngIf="indexAb==5">Pasiva - </span>
+                    <span *ngIf="indexAb==0">Q - </span>
+                    <span *ngIf="indexAb==1">W - </span>
+                    <span *ngIf="indexAb==2">E - </span>
+                    <span *ngIf="indexAb==3">R - </span>{{ability.name}}
+                </h4>
+                <table class="table tablaCostes">
+                    <tr>
+                        <td class="cel cel2" *ngIf="ability.id">
+                            Coste (por nivel) -> {{ability.costBurn}}
+                        </td>
+                        <td class="cel cel2" *ngIf="ability.id&&ability.costType">
+                            Coste (por nivel) -> {{ability.costType}}
+                        </td>
+                        <td class="cel cel2" *ngIf="!ability.id">
+                            Coste (por nivel) -> 0
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="cel cel2" *ngIf="ability.id">
+                            Rango de abilidad -> {{ability.maxrank}}
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td class="cel cel2" *ngIf="ability.id">
+                            Rango de abilidad -> {{ability.rangeBurn}}
+                        </td>
+                    </tr> 
+                </table>
+                <div class="abilityDesc">{{ability.description}}</div>
+            </div>
         </div>
-        <div class="col-10 row">
+        <div class="col-5 row ab">
             <h4 class="col-12">STATS</h4>
-            <div class="col-6">
-                <ul>
-                    <li>Fuente -></li>
-                    <li *ngFor="let stat of champ.stats | keyvalue">{{stat.key}} - </li>
-                </ul>
-            </div>
-            <div class="col-6">
-                <ul>
-                    <li>{{champ.partype}}</li>
-                    <li *ngFor="let stat of champ.stats | keyvalue">{{stat.value}}</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-12 row">
-            <div class="col-4">
-                <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()">
-            </div>
-            <div class="col-2" *ngFor="let ability of champ.spells, index as i" >
-                <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
-            </div>
-            <div class="col-12">
-                <h3>DESCRIPTION</h3>
-                <h4>{{ability.name}}</h4>
-                <p></p>
+            <div class="col-12 row statsss">
+                <img class="col-6 imgStats" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ.id}}_0.jpg">
+                <div class="col-6 divStat2">
+                    <table class="table tablaStats">
+                        <tr>
+                            <td>Fuente -> {{champ.partype}}</td>
+                        </tr>
+                        <tr *ngFor="let stat of champ.stats | keyvalue">
+                            <td>{{stat.key}} -> {{stat.value}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-      </div>
+        <!--<div class="col-7 row ab">
+            
+        </div>
+        <div class="col-5 row ab">
+            
+        </div>-->
+    </div>
 </div>
 

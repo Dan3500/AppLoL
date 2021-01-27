@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChampionInfoService } from '../../services/championService';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-champion',
@@ -14,9 +16,16 @@ export class ChampionComponent implements OnInit {
 
   public champ=[];
   public ability=[];
+  public indexAb=0;
   
   constructor(private _championInfoService:ChampionInfoService,
-              private _router:Router, private _route:ActivatedRoute) { }
+              private _router:Router, private _route:ActivatedRoute,
+              private _config: NgbCarouselConfig) {
+    //Datos para configurar los carruseles
+    _config.interval=0;
+    _config.pauseOnHover=true;
+    _config.wrap=true;
+  }
 
   changeAbility(index=5){
     if (index==5){
@@ -24,7 +33,8 @@ export class ChampionComponent implements OnInit {
     }else{
       this.ability=this.champ["spells"][index];
     }
-    
+    this.indexAb=index;
+    console.log(this.ability)
   }
 
   ngOnInit(): void {
