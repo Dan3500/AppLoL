@@ -3,14 +3,6 @@
     color:aqua;
 }
 
-.abilityImg{
-    width:75px;
-    height:75px;
-    cursor:pointer;
-    border:1px solid cyan;
-    margin:auto;
-}
-
 .carrusel{
     z-index: 0;
     cursor:pointer;
@@ -29,70 +21,61 @@
     margin:auto;
 }
 
-.statsss {
-    height:550px;
-    margin-bottom: 40px;
+.info{
+    height:650px;
 }
 
-.abilities{
+    .descAb{
+        text-align:center;
+    }
 
-}
+    .tablaCostes{
+        text-align:center;
+        height:80%;
+        margin:auto;
+    }
 
-.imgStats{
-    width:105%;
-    height:100%;
-    margin:auto;
-}
+    .abilityImg{
+        width:75px;
+        height:75px;
+        cursor:pointer;
+        border:1px solid cyan;
+        margin:auto;
+    }
 
-.divStat2{
-    padding-top:5px;
-    height:100%;
-    width:100%;
-    overflow: scroll;
-    overflow-x: hidden;
-}
+    .abilityDesc{
+        text-align:justify;
+    }
 
-.tablaStats{
-    width:100%;
-    height:80%;
-}
+    .tituloAb{
+        text-align:center;
+    }
 
-.divStat2::-webkit-scrollbar{
-    width:12px;
-}
+    .imgStats{
+        margin:auto;
+    }
 
-.divStat2::-webkit-scrollbar-thumb {
-    background-color:#00ffff;
-    border-radius: 20px;
-    border: 2px solid black;
-}
+    .tablaStats{
+        margin:auto;
+        width:100%;
+        border:1px solid cyan;
+        border-radius: 50px 50px 50px 50px;
+    }
 
-.descAb{
-    text-align:center;
-    margin:auto;
-    border:1px solid green;
-}
+    /*.divStats2{
+        overflow:scroll;
+        overflow-x: hidden;
+    }
 
-.tablaCostes{
-    text-align:center;
-    height:80%;
-    margin:auto;
-}
+    .divStat2::-webkit-scrollbar{
+        width:12px;
+    }
 
-.abilityDesc{
-    text-align:justify;
-}
+    .divStat2::-webkit-scrollbar-thumb {
+        background-color:#00ffff;
+        border-radius: 20px;
+        border: 2px solid black;
+    }*/
 
-.tituloAb{
-    border:1px solid yellow;
-    height:5%;
-}
 
-.ab{
-    border:1px solid red;
-}
-.ab1{
-    margin-top:0px;
-    height:75px;
-    border:1px solid blue;
-}
+

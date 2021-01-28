@@ -1,7 +1,4 @@
 <div class="cajaPrincipal container-fluid">
-    <!--<h1 class="nombreChamp">{{champ.name.toUpperCase()}}</h1>
-    <h3>{{champ.title}}</h3>
-    <br>-->
     <ngb-carousel class="carrusel">
         <ng-template ngbSlide="ngbSlide" *ngFor="let skin of champ.skins">
             <div class="carousel-caption textos">
@@ -17,12 +14,11 @@
     <h4>LORE</h4>
     <p class="lore">{{champ.lore}}</p>
     <br>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-7 row ab">
-            <h4 class="col-12 tituloAb">HABILIDADES</h4>
-            <div class="col-12 row ab1">
+    <div class="row info">
+        <div class="col-7 abilities">
+            <h4 class="tituloAb">HABILIDADES</h4>
+            <br>
+            <div class="col-12 row">
                 <div class="col-4">
                     <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()" class="abilityImg">
                 </div>
@@ -30,7 +26,9 @@
                     <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
                 </div>
             </div>
-            <div class="col-11 descAb">
+            <div class="col-12 descAb">
+                <br>
+                <br>
                 <h4>
                     <span *ngIf="indexAb==5">Pasiva - </span>
                     <span *ngIf="indexAb==0">Q - </span>
@@ -43,49 +41,51 @@
                         <td class="cel cel2" *ngIf="ability.id">
                             Coste (por nivel) -> {{ability.costBurn}}
                         </td>
-                        <td class="cel cel2" *ngIf="ability.id&&ability.costType">
-                            Coste (por nivel) -> {{ability.costType}}
-                        </td>
                         <td class="cel cel2" *ngIf="!ability.id">
                             Coste (por nivel) -> 0
                         </td>
-                    </tr> 
-                    <tr>
-                        <td class="cel cel2" *ngIf="ability.id">
+                        <td class="cel cel2" *ngIf="ability.id&&ability.maxrank">
                             Rango de abilidad -> {{ability.maxrank}}
                         </td>
-                    </tr> 
-                    <tr>
-                        <td class="cel cel2" *ngIf="ability.id">
+                        <td class="cel cel2" *ngIf="ability.id&&ability.rangeBurn">
                             Rango de abilidad -> {{ability.rangeBurn}}
                         </td>
                     </tr> 
                 </table>
+                <br>
                 <div class="abilityDesc">{{ability.description}}</div>
             </div>
         </div>
-        <div class="col-5 row ab">
-            <h4 class="col-12">STATS</h4>
-            <div class="col-12 row statsss">
-                <img class="col-6 imgStats" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ.id}}_0.jpg">
-                <div class="col-6 divStat2">
-                    <table class="table tablaStats">
+        <div class="col-5 abilities2">
+            <h4 class="tituloAb">STATS</h4>
+            <br>
+            <div class="row stats"> 
+                <div class="col-6 divStats1">
+                    <img class="imgStats" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ.id}}_0.jpg">
+                </div>
+                <div class="col-6 divStats2">
+                    <table class="tablaStats">
                         <tr>
-                            <td>Fuente -> {{champ.partype}}</td>
+                            <td>Fuente</td>
+                            <td>
+                                ->
+                            </td>
+                            <td>
+                                {{champ.partype}}
+                            </td>
                         </tr>
                         <tr *ngFor="let stat of champ.stats | keyvalue">
-                            <td>{{stat.key}} -> {{stat.value}}</td>
+                            <td>{{stat.key}}</td>
+                            <td>
+                                ->
+                            </td>
+                            <td>
+                                {{stat.value}}
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
-        <!--<div class="col-7 row ab">
-            
-        </div>
-        <div class="col-5 row ab">
-            
-        </div>-->
     </div>
 </div>
-
