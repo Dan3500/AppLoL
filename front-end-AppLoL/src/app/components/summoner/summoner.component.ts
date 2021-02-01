@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Summoner } from 'src/app/models/summoner';
 import { SummonerInfoService } from '../../services/summonerInfo.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
   selector: 'app-summoner',
@@ -14,6 +15,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class SummonerComponent implements OnInit {
 
   public summoner: Summoner;
+  public matches=[];
+  public leagues=[];
+
   constructor(public _summonerInfoService:SummonerInfoService,
               private _route:ActivatedRoute,
               private _router:Router) {
@@ -26,12 +30,33 @@ export class SummonerComponent implements OnInit {
       this._summonerInfoService.obtenerInfoSummoner(user).subscribe(
         response=>{
           if (response["status_code"]){
-            console.log("MAL");
+            console.log("Error al encontrar a este invocador");
           }else{
-            console.log("BIEN");
             this.summoner.img=response["profileIconId"];
             this.summoner.lvl=response["summonerLevel"];
             this.summoner.username=response["name"];
+            let accountId=response["accountId"];
+            let summonerId=response["id"];
+            this._summonerInfoService.obtenerSummonerMatches(accountId).subscribe(
+              response=>{
+                console.log(response)
+                this.matches=response;
+                this._summonerInfoService.obtenerSummonerLeagues(summonerId).subscribe(
+                  response=>{
+                    this.leagues=response;
+                    console.log(this.leagues)
+                    let i=1.56;
+                    i.toPrecision()
+                  },
+                  error=>{
+                    console.log(error)
+                  }
+                )
+              },
+              error=>{
+                console.log(error)
+              }
+            )
           }
         },
         error=>{

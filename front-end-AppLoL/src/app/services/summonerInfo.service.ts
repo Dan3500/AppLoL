@@ -12,6 +12,14 @@ export class SummonerInfoService{
      }
 
     obtenerInfoSummoner(summoner:string):Observable<any>{          
-        return this.http.get(this.api+"/prueba/"+summoner);
+        return this.http.get(this.api+"/summoner/"+summoner);
+    }
+
+    obtenerSummonerLeagues(summonerId:string):Observable<any>{
+        return this.http.get(this.api+"/leagues/"+summonerId);
+    }
+
+    obtenerSummonerMatches(accountId:string):Observable<any>{          
+        return this.http.get(this.api+"/matches/"+accountId);
     }
 }

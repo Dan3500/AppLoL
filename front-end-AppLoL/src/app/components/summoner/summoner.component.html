@@ -1,8 +1,17 @@
 <div *ngIf="summoner.username!='error'">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.1.1/img/profileicon/{{summoner.img}}.png"/>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/profileicon/{{summoner.img}}.png"/>
     <h1>{{summoner.username}}</h1>
     <h2>{{summoner.lvl}}</h2>
 </div>
 <div *ngIf="summoner.username=='error'">
     <h1>NO EXISTE NINGUN INVOCADOR CON ESTE NOMBRE EN ESTE SERVIDOR</h1>
 </div>
+<div *ngFor="let tier of leagues; index as i">
+    <img src="../../../assets/ranks/{{tier.tier.toLowerCase()}}.png">
+    <h2 *ngIf="i==0">SOLO QUEUE</h2>
+    <h2 *ngIf="i==1">FLEX QUEUE</h2>
+    {{tier.tier}} {{tier.rank}}<br>
+    {{tier.wins}}W / {{tier.losses}}L -> {{((tier.wins*100)/(tier.wins+tier.losses)).toFixed()}}% WINRATE
+    
+</div>
+

@@ -13,16 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\PruebasController;
+use App\Http\Controllers\SummonerController;
 use App\Http\Controllers\ChampionsController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-//RUTA DE PRUEBA
-Route::get("/prueba/{summoner}",[PruebasController::class,'index']);
+//RUTAS DE INVOCADOR
+Route::get("/summoner/{summoner}",[SummonerController::class,'showInfoSummoner']);//Obtener info basica del invocador
 
+Route::get("/matches/{summonerId}",[SummonerController::class,'showSummonerMatches']);//Obtener partidas de un invocador
+
+Route::get("/leagues/{summonerId}",[SummonerController::class,'showSummonerLeague']);//Obtener partidas de un invocador
+
+//RUTAS DE CHAMPIONS
 Route::get("/champions",[ChampionsController::class,'showAll']);
 
 Route::get("/champion/{champName}",[ChampionsController::class,'showChamp']);

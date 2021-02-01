@@ -1,7 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { SummonerInfoService } from '../../services/summonerInfo.service';
-import { BuscadorService } from '../../services/buscador.service';
-import { FormsModule } from "@angular/forms";
+import { Form, FormsModule } from "@angular/forms";
 import { Summoner } from '../../models/summoner';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   providers:[
-    SummonerInfoService, BuscadorService
+    SummonerInfoService
   ]
 })
 export class HeaderComponent implements OnInit {
@@ -19,7 +18,6 @@ export class HeaderComponent implements OnInit {
   public search="";
 
   constructor(private _summonerInfoService: SummonerInfoService,
-              private _buscadorService: BuscadorService,
               private _route:ActivatedRoute,
               private _router:Router) {
     this.summoner=new Summoner();
@@ -28,9 +26,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit(form){
     this._router.navigate(['/summoner/'+this.search])
-    //form.reset();
+    form.reset();
   }
 
 }

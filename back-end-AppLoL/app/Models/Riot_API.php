@@ -15,7 +15,7 @@ class Riot_API extends Model
     {
         $this->url="https://euw1.api.riotgames.com";
         //************************************************
-        $this->token="RGAPI-3d10abfa-4b78-4b4e-8cf1-98d57ab1e39a";
+        $this->token="RGAPI-333645a0-80bb-41c7-9a6b-15cc11921039";
         $this->ddragon="http://ddragon.leagueoflegends.com/cdn";
     }
 
