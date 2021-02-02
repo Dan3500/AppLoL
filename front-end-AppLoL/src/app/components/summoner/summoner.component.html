@@ -1,17 +1,36 @@
-<div *ngIf="summoner.username!='error'">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/profileicon/{{summoner.img}}.png"/>
-    <h1>{{summoner.username}}</h1>
-    <h2>{{summoner.lvl}}</h2>
-</div>
-<div *ngIf="summoner.username=='error'">
-    <h1>NO EXISTE NINGUN INVOCADOR CON ESTE NOMBRE EN ESTE SERVIDOR</h1>
-</div>
-<div *ngFor="let tier of leagues; index as i">
-    <img src="../../../assets/ranks/{{tier.tier.toLowerCase()}}.png">
-    <h2 *ngIf="i==0">SOLO QUEUE</h2>
-    <h2 *ngIf="i==1">FLEX QUEUE</h2>
-    {{tier.tier}} {{tier.rank}}<br>
-    {{tier.wins}}W / {{tier.losses}}L -> {{((tier.wins*100)/(tier.wins+tier.losses)).toFixed()}}% WINRATE
+<div class="container-fluid" *ngIf="summoner.username!='error'">
+    <br>
+    <div class="row">
+        <div class="img col-2">
+            <img class="imgPerfil" src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/profileicon/{{summoner.img}}.png"/>
+        </div>
+        <div class="col-10 nombre">
+            <br>
+            <h1>{{summoner.username}}</h1>
+            <h3>Nivel {{summoner.lvl}}</h3>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 liga" *ngFor="let tier of leagues; index as i">
+            <br>
+            <br>
+            <br><h3 *ngIf="i==0">SOLO QUEUE</h3>
+                <h3 *ngIf="i==1">FLEX QUEUE</h3>
+            <img class="imgLiga" src="../../../assets/ranks/{{tier.tier.toLowerCase()}}.png"><br>
+            {{tier.tier}} {{tier.rank}}<br>
+            {{tier.leaguePoints}} LP<br>
+            {{tier.wins}}W / {{tier.losses}}L  | {{((tier.wins*100)/(tier.wins+tier.losses)).toFixed()}}% |
+        </div>
+    </div>
+    <br>
+    <br>
+    <h3 class="nombre">PARTIDAS</h3>
+    <br>
     
 </div>
+<div class="container-fluid" *ngIf="summoner.username=='error'">
+    <h1>NO EXISTE NINGUN INVOCADOR CON ESTE NOMBRE EN ESTE SERVIDOR</h1>
+</div>
+
 

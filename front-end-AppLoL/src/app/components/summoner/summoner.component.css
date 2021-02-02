@@ -1,0 +1,27 @@
+.nombre{
+    color:aqua;
+    text-align:left;
+}
+
+.img{
+    text-align:center;
+}
+
+.imgPerfil{
+    width:200px;
+    height:200px;
+    border:1px solid black;
+    border-radius: 50%;
+}
+
+.imgLiga{
+    width:175px;
+    height:175px;
+}
+
+.liga{
+    text-align:center;
+    color:aqua;
+    text-align:center;
+    margin:auto;
+}

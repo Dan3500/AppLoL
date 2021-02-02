@@ -13,12 +13,15 @@
     width:81%;
 }
 
-.textosSkins{
+.textos{
+    width:55%;
     color:rgb(255, 255, 255);
-    border:1px solid black;
-    border-radius: 10px 10px 10px 10px;
-    background-color: rgba(0, 195, 255, 0.849);
     margin:auto;
+}
+.textosSkins{
+    -webkit-text-stroke: 2px black;
+    color:white;
+    font-size:45px;
 }
 
 .info{

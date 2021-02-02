@@ -26,7 +26,7 @@ class SummonerController extends Controller
     }
 
     public function showSummonerMatches($summonerId){
-        $summoner=trim($summonerId);
+        $summonerId=trim($summonerId);
         $api=new Riot_API();
         $url=$api->getUrl()."/lol/match/v4/matchlists/by-account/$summonerId";
 

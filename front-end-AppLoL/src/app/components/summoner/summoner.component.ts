@@ -45,8 +45,6 @@ export class SummonerComponent implements OnInit {
                   response=>{
                     this.leagues=response;
                     console.log(this.leagues)
-                    let i=1.56;
-                    i.toPrecision()
                   },
                   error=>{
                     console.log(error)
