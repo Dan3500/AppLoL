@@ -22,10 +22,14 @@
         cursor:pointer;
     }
 
+    .rol{
+        color:lightblue;
+        text-align: center;
+    }
+
 .colchamp{
     text-align:center;
     height:200px;
-    border:1px solid red;
 }
 
 .champLink{

@@ -29,7 +29,7 @@ class ChampionsController extends Controller
             foreach($respuesta->data as $key=>$champ){
                 for($i=0;$i<count($champ->tags);$i++){
                     if ($champ->tags[$i]==$show){
-                       array_push($champList,[$key=>$champ]);
+                       $champList[$key]=$champ;
                     }
                 }
             }

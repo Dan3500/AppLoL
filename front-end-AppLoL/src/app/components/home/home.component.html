@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2 col-4 iconos">
-            <img class="iconRol" src="../../../assets/iconsHome/Tank_icon.png" (onclick)="buscarChamps('Tank')"/>
+            <img class="iconRol" src="../../../assets/iconsHome/Tank_icon.png" (click)="buscarChamps('Tank')"/>
         </div>
         <div class="col-md-2 col-4 iconos">
             <img class="iconRol" src="../../../assets/iconsHome/Fighter_icon.png" (click)="buscarChamps('Fighter')"/>
@@ -25,6 +25,17 @@
         </div>
         <br />
     </div>
+    <div>
+        <br>
+        <h2 *ngIf="mostrarChamps=='Fill'" class="rol">TODOS LOS CAMPEONES</h2>
+        <h2 *ngIf="mostrarChamps=='Tank'" class="rol">TANQUES</h2>
+        <h2 *ngIf="mostrarChamps=='Fighter'" class="rol">LUCHADORES</h2>
+        <h2 *ngIf="mostrarChamps=='Assassin'" class="rol">ASESINOS</h2>
+        <h2 *ngIf="mostrarChamps=='Mage'" class="rol">MAGOS</h2>
+        <h2 *ngIf="mostrarChamps=='Marksman'" class="rol">TIRADORES</h2>
+        <h2 *ngIf="mostrarChamps=='Support'" class="rol">SUPPORT</h2>
+        <br>
+    </div>
     <div class="row">
         <div *ngFor="let item of championList | keyvalue" class="col-4 col-md-3 col-lg-2 col-xl-1 colchamp pt-3">
             <a [routerLink]="['/champion',item.key]" class="champLink">
@@ -32,18 +43,7 @@
                     src="http://ddragon.leagueoflegends.com/cdn/{{version}}/img/champion/{{item.key}}.png"> 
                 <h4 class="nombreChamp">{{championList[item.key].name}}</h4>
             </a>
-            <br>
         </div>
     </div>
-    <!--<div class="row" *ngFor="let item of championList | keyvalue">
-        <div class="col-4 col-md-3 col-lg-2 col-xl-1 colchamp pt-3" *ngIf="mostrarChamps!='Fill'&&(championList[item.key].tags[0]==mostrarChamps||championList[item.key].tags[1]==mostrarChamps)">
-            <a [routerLink]="['/champion',item.key]" class="champLink" >
-                <img  class="imgChamp"
-                    src="http://ddragon.leagueoflegends.com/cdn/{{version}}/img/champion/{{item.key}}.png"> 
-                <h4 class="nombreChamp">{{championList[item.key].name}}</h4>
-            </a>
-            <br>
-        </div>
-    </div>-->
 </div>
 

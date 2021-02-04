@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.mostrarChamps="Fill"
     this.recogerInfo();
   }
 
@@ -43,7 +44,6 @@ export class HomeComponent implements OnInit {
         this.championList=response["data"];
         this.version=response["version"];
         this._championInfoService.version=this.version;
-        this.mostrarChamps="Fill"
         console.log(this.championList);
       },
       error=>{
