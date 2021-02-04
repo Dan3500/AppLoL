@@ -2,15 +2,13 @@
     font-family:"Fontt";
     src: url("../assets/fonts/College Halo.ttf");
 }
-*{
-}
+
 .cajaPrincipal{
     width:100%;
     height:100%;
-    background-color: rgb(0, 3, 27);
+    background-size: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/fondoLoLAPP.jpg"), repeat ;
 }
 .contenido{
-    /*width:100%;*/
-    border:1px solid black;
     border-top:0px;
 }

@@ -5,7 +5,7 @@
                 <h4 class="textosSkins" *ngIf="skin.name=='default'">{{champ.name}}</h4>
                 <h4 class="textosSkins" *ngIf="skin.name!='default'">{{skin.name}}</h4>
             </div>
-          <div class="picsum-img-wrapper">
+          <div class="picsum-img-wrapper imgg">
             <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champ.id}}_{{skin.num}}.jpg" class="carruselImg" alt="skin 1">
           </div>
         </ng-template>
@@ -15,7 +15,7 @@
     <p class="lore">{{champ.lore}}</p>
     <br>
     <div class="row info">
-        <div class="col-7 abilities">
+        <div class="col-lg-7 col-12 abilities">
             <h4 class="tituloAb">HABILIDADES</h4>
             <br>
             <div class="col-12 row">
@@ -53,10 +53,10 @@
                     </tr> 
                 </table>
                 <br>
-                <div class="abilityDesc">{{ability.description}}</div>
+                <div class="abilityDesc"><p>{{ability.description}}</p></div>
             </div>
         </div>
-        <div class="col-5 abilities2">
+        <div class="col-lg-5 col-12 abilities2">
             <h4 class="tituloAb">STATS</h4>
             <br>
             <div class="row stats"> 
@@ -68,7 +68,7 @@
                         <tr>
                             <td>Fuente</td>
                             <td>
-                                ->
+                                - 
                             </td>
                             <td>
                                 {{champ.partype}}
@@ -77,7 +77,7 @@
                         <tr *ngFor="let stat of champ.stats | keyvalue">
                             <td>{{stat.key}}</td>
                             <td>
-                                ->
+                                -
                             </td>
                             <td>
                                 {{stat.value}}

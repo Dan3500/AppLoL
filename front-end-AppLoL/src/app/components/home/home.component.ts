@@ -3,6 +3,7 @@ import * as jQuery from 'jquery';
 import { SummonerInfoService } from '../../services/summonerInfo.service';
 import { ChampionInfoService } from '../../services/championService';
 import { Summoner } from '../../models/summoner';
+import { global } from "../../services/global";
 
 @Component({
   selector: 'app-home',
@@ -15,20 +16,34 @@ import { Summoner } from '../../models/summoner';
 export class HomeComponent implements OnInit {
 
   public summoner: Summoner;
-  public version="";
-  public championList=[];
+  public mostrarChamps:string;
+  public version:string;
+  public championList:any;
+  public mostrarChampList:any;
 
   constructor(private _summonerInfoService: SummonerInfoService,
               private _championInfoService: ChampionInfoService) {
     this.summoner=new Summoner();
+    this.mostrarChamps="Fill";
   }
 
   ngOnInit(): void {
-    this._championInfoService.obtenerInfoChampions().subscribe(
+    this.recogerInfo();
+  }
+
+  buscarChamps(rol:string){
+    this.mostrarChamps=rol;
+    this.recogerInfo();
+  }
+
+  recogerInfo(){
+    this._championInfoService.obtenerInfoChampions(this.mostrarChamps).subscribe(
       response=>{
         console.log(response);
         this.championList=response["data"];
         this.version=response["version"];
+        this._championInfoService.version=this.version;
+        this.mostrarChamps="Fill"
         console.log(this.championList);
       },
       error=>{
@@ -36,6 +51,7 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+  
 
   
 

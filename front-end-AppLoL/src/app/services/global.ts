@@ -1,3 +1,3 @@
 export var global={
-    url:"http://api.leagueofpros.es"
+    url:"http://api.leagueofpros.es",
 }

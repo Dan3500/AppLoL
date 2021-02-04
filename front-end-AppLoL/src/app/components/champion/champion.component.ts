@@ -14,8 +14,8 @@ import * as $ from "jquery";
 })
 export class ChampionComponent implements OnInit {
 
-  public champ=[];
-  public ability=[];
+  public champ:any;
+  public ability:any;
   public indexAb=0;
   
   constructor(private _championInfoService:ChampionInfoService,

@@ -9,12 +9,23 @@
     color: lightblue;
 }
 
-.colchamp{
+.iconos{
     text-align:center;
 }
 
-.champ{
+.iconRol{
+    width:50px;
+    height:50px;
+    margin:auto;
+}
+    .iconRol:hover{
+        cursor:pointer;
+    }
+
+.colchamp{
     text-align:center;
+    height:200px;
+    border:1px solid red;
 }
 
 .champLink{
