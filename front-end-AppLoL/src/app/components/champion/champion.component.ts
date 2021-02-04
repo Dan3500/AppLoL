@@ -17,6 +17,7 @@ export class ChampionComponent implements OnInit {
   public champ:any;
   public ability:any;
   public indexAb=0;
+  public cargar:boolean;
   
   constructor(private _championInfoService:ChampionInfoService,
               private _router:Router, private _route:ActivatedRoute,
@@ -25,6 +26,7 @@ export class ChampionComponent implements OnInit {
     _config.interval=0;
     _config.pauseOnHover=true;
     _config.wrap=true;
+    this.cargar=false;
   }
 
   changeAbility(index=5){
@@ -46,6 +48,7 @@ export class ChampionComponent implements OnInit {
           this.champ=response["data"][champ];
           console.log(this.champ)
           this.changeAbility();
+          this.cargar=true;
         },
         error=>{
           console.log(error);

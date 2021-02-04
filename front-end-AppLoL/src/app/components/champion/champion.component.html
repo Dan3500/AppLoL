@@ -1,4 +1,4 @@
-<div class="cajaPrincipal container-fluid">
+<div class="cajaPrincipal container-fluid" *ngIf="cargar==true">
     <ngb-carousel class="carrusel">
         <ng-template ngbSlide="ngbSlide" *ngFor="let skin of champ.skins">
             <div class="carousel-caption textos">
@@ -88,4 +88,30 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container-fluid cajaPrincipal" *ngIf="cargar==false">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img class="loadingGif" src="../../../assets/loading.gif">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>

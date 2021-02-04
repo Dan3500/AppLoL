@@ -1,6 +1,6 @@
-<h1 class="tituloPrincipal pt-5 pb-2">BIENVENIDO A LEAGUE OF PROS</h1>
-<h3 class="version mb-2">v{{version}}</h3>
-<div class="container-fluid">
+<div class="container-fluid content" *ngIf="cargar==true">
+    <h1 class="tituloPrincipal pt-5 pb-2">BIENVENIDO A LEAGUE OF PROS</h1>
+    <h3 class="version mb-2">v{{version}}</h3>
     <div class="row">
         <div class="col-md-2 col-4 iconos">
             <img class="iconRol" src="../../../assets/iconsHome/Tank_icon.png" (click)="buscarChamps('Tank')"/>
@@ -36,7 +36,7 @@
         <h2 *ngIf="mostrarChamps=='Support'" class="rol">SUPPORT</h2>
         <br>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="cargarGrid==true">
         <div *ngFor="let item of championList | keyvalue" class="col-4 col-md-3 col-lg-2 col-xl-1 colchamp pt-3">
             <a [routerLink]="['/champion',item.key]" class="champLink">
                 <img  class="imgChamp"
@@ -45,5 +45,43 @@
             </a>
         </div>
     </div>
+    <div class="content" *ngIf="cargarGrid==false">
+        <br>
+        <br>
+        <br>
+        <img class="loadingGif" src="../../../assets/loading.gif">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+<div class="container-fluid content" *ngIf="cargar==false">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img class="loadingGif" src="../../../assets/loading.gif">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 

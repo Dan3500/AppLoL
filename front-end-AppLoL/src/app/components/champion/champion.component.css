@@ -3,6 +3,11 @@
     color:aqua;
 }
 
+.loadingGif{
+    width:20%;
+    height:15%;
+}
+
 .carrusel{
     z-index: 0;
     cursor:pointer;

@@ -20,10 +20,13 @@ export class HomeComponent implements OnInit {
   public version:string;
   public championList:any;
   public mostrarChampList:any;
+  public cargar:boolean;
+  public cargarGrid:boolean;
 
   constructor(private _summonerInfoService: SummonerInfoService,
               private _championInfoService: ChampionInfoService) {
     this.summoner=new Summoner();
+    this.cargar=false;
     this.mostrarChamps="Fill";
   }
 
@@ -33,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   buscarChamps(rol:string){
+    this.cargarGrid=false;
     this.mostrarChamps=rol;
     this.recogerInfo();
   }
@@ -45,6 +49,8 @@ export class HomeComponent implements OnInit {
         this.version=response["version"];
         this._championInfoService.version=this.version;
         console.log(this.championList);
+        this.cargar=true;
+        this.cargarGrid=true;
       },
       error=>{
         console.log(error)
