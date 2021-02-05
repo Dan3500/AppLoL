@@ -1,48 +1,29 @@
-<div class="row header">
-    <div class="container1 col-12 ">
-        <nav class="navbar navbar-expand-lg">
-            <div class="element col-1">
-            </div>
-            <div class="element col-4">
-                <h1 class="tituloPrincipal"><a [routerLink]="['/home']" class="enlacePrincipal">LEAGUE OF PROS</a></h1>
-            </div>
-            <div class="element col-4 buscador">
-                <form class="d-flex mr-0" #summonerForm='ngForm' (ngSubmit)='onSubmit(summonerForm)'>
-                    <input type="search" name="tittle" #tittle="ngModel" [(ngModel)]="search" 
-                        placeholder="Buscar Campeón/Invocador" class="form-control me-2" required />
-                     <input type="submit" value="Buscar" class="btn btn-success" [disabled]="summonerForm.invalid" />
-                 </form>
-            </div>
-            <div class="collapse navbar-collapse element col-3" id="navbarSupportedContent">
-                <ul class="element navbar-nav navbar-right">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Registro</a>
-                  </li>
-                </ul>
-          
-                <!--<ul class="element navbar-nav navbar-right">
-                  <li class="nav-item">
-                    <img class="imgMuestra" src=""/>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Invocador
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" [routerLink]="['/crear-entrada']">Crear entrada</a>
-                      <a class="dropdown-item" [routerLink]="['/crear-categoria']">Crear categoría</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" [routerLink]="['/perfil', identity.sub]">Mi perfil</a>
-                      <a class="dropdown-item" [routerLink]="['/ajustes']">Ajustes</a>
-                      <a class="dropdown-item" [routerLink]="['logout/1']">Salir</a>
-                    </div>
-                  </li>
-                </ul>-->
-                
-            </div>
-        </nav>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navClass row">
+    <div class="element col-4">
+        <h1 class="tituloPrincipal"><a [routerLink]="['/home']" class="enlacePrincipal">LEAGUE OF PROS</a></h1>
     </div>
+    <div class="element col-4 buscador">
+        <form class="d-flex mr-0" #summonerForm='ngForm' (ngSubmit)='onSubmit(summonerForm)'>
+            <input type="search" name="tittle" #tittle="ngModel" [(ngModel)]="search" 
+                placeholder="Buscar Campeón/Invocador" class="form-control me-2" required />
+              <input type="submit" value="Buscar" class="btn btn-success" [disabled]="summonerForm.invalid" />
+          </form>
+    </div>
+    <div class="collapse navbar-collapse element col-4" id="navbarSupportedContent">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <a class="dropdown-item" href="#">Crear entrada</a>
+              <a class="dropdown-item" href="#">Crear categoría</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" href="#">Ajustes</a>
+              <a class="dropdown-item" href="#">Salir</a>
+            </div>
+          </div>
+      </div>
+  </nav>
 </div>
+
