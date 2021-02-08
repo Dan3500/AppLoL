@@ -45,43 +45,9 @@
             </a>
         </div>
     </div>
-    <div class="content" *ngIf="cargarGrid==false">
-        <br>
-        <br>
-        <br>
-        <img class="loadingGif" src="../../../assets/loading.gif">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+    <app-loading *ngIf="cargarGrid==false"></app-loading>
 </div>
-<div class="container-fluid content" *ngIf="cargar==false">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <img class="loadingGif" src="../../../assets/loading.gif">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
+<app-loading *ngIf="cargar==false"></app-loading>
+
+
 

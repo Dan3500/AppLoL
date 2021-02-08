@@ -89,29 +89,4 @@
         </div>
     </div>
 </div>
-<div class="container-fluid cajaPrincipal" *ngIf="cargar==false">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <img class="loadingGif" src="../../../assets/loading.gif">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
+<app-loading *ngIf="cargar==false"></app-loading>

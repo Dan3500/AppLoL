@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
   public summoner: Summoner;
   public search="";
   public version: String;
-
+  public isCollapsed = true;
+  
   constructor(private _summonerInfoService: SummonerInfoService,
               private _route:ActivatedRoute,
               private _router:Router) {

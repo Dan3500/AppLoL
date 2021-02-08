@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { SummonerComponent } from './components/summoner/summoner.component';
 import { ChampionComponent } from './components/champion/champion.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChampionComponent } from './components/champion/champion.component';
     HomeComponent,
     HeaderComponent,
     SummonerComponent,
-    ChampionComponent
+    ChampionComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,34 @@
-<div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navClass row">
-    <div class="element col-4">
-        <h1 class="tituloPrincipal"><a [routerLink]="['/home']" class="enlacePrincipal">LEAGUE OF PROS</a></h1>
-    </div>
-    <div class="element col-4 buscador">
-        <form class="d-flex mr-0" #summonerForm='ngForm' (ngSubmit)='onSubmit(summonerForm)'>
-            <input type="search" name="tittle" #tittle="ngModel" [(ngModel)]="search" 
-                placeholder="Buscar Campeón/Invocador" class="form-control me-2" required />
-              <input type="submit" value="Buscar" class="btn btn-success" [disabled]="summonerForm.invalid" />
-          </form>
-    </div>
-    <div class="collapse navbar-collapse element col-4" id="navbarSupportedContent">
-        <div ngbDropdown class="d-inline-block">
-            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>Action - 1</button>
-              <a class="dropdown-item" href="#">Crear entrada</a>
-              <a class="dropdown-item" href="#">Crear categoría</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Mi perfil</a>
-              <a class="dropdown-item" href="#">Ajustes</a>
-              <a class="dropdown-item" href="#">Salir</a>
-            </div>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark navClass" style="background-color: #12161a;">
+  <a class="navbar-brand" href="#">League of pros</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+    <!--<div ngbDropdown class="nav-item mr-4">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Usuario</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <a class="dropdown-item" href="#">Crear entrada</a>
+        <a class="dropdown-item" href="#">Crear categoría</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Mi perfil</a>
+        <a class="dropdown-item" href="#">Ajustes</a>
+        <a class="dropdown-item" href="#">Salir</a>
       </div>
-  </nav>
-</div>
+    </div>-->
+    <form class="form-inline my-2 my-lg-0" #summonerForm='ngForm' (ngSubmit)="onSubmit(summonerForm)">
+      <input class="form-control mr-sm-2" type="search"  name="buscador" #buscador="ngModel" [(ngModel)]="search" placeholder="Buscar invocador" aria-label="Search" required>
+      <button class="btn btn-primary my-2 my-sm-0" type="submit"  [disabled]="summonerForm.invalid">Buscar</button>
+    </form>
+  </div>
+</nav>
 
