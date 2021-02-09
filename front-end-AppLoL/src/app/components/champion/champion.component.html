@@ -2,8 +2,8 @@
     <ngb-carousel class="carrusel">
         <ng-template ngbSlide="ngbSlide" *ngFor="let skin of champ.skins">
             <div class="carousel-caption textos">
-                <h4 class="textosSkins" *ngIf="skin.name=='default'">{{champ.name}}</h4>
-                <h4 class="textosSkins" *ngIf="skin.name!='default'">{{skin.name}}</h4>
+                <h3 class="textosSkins" *ngIf="skin.name=='default'">{{champ.name}}</h3>
+                <h3 class="textosSkins" *ngIf="skin.name!='default'">{{skin.name}}</h3>
             </div>
           <div class="picsum-img-wrapper imgg">
             <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champ.id}}_{{skin.num}}.jpg" class="carruselImg" alt="skin 1">
@@ -18,12 +18,12 @@
         <div class="col-lg-7 col-12 abilities">
             <h4 class="tituloAb">HABILIDADES</h4>
             <br>
-            <div class="col-12 row">
-                <div class="col-4">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()" class="abilityImg">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-4">
+                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/passive/{{champ.passive.image.full}}" (click)="changeAbility()" class="abilityImg">
                 </div>
-                <div class="col-2" *ngFor="let ability of champ.spells, index as i" >
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
+                <div class="col-3 col-lg-2" *ngFor="let ability of champ.spells, index as i" >
+                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/{{ability.image.full}}" (click)="changeAbility(i)" class="abilityImg">
                 </div>
             </div>
             <div class="col-12 descAb">
@@ -60,10 +60,10 @@
             <h4 class="tituloAb">STATS</h4>
             <br>
             <div class="row stats"> 
-                <div class="col-6 divStats1">
+                <div class="col-lg-6 col-12 divStats1">
                     <img class="imgStats" src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{champ.id}}_0.jpg">
                 </div>
-                <div class="col-6 divStats2">
+                <div class="col-lg-6 col-12 divStats2">
                     <table class="tablaStats">
                         <tr>
                             <td>Fuente</td>
