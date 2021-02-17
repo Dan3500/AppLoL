@@ -25,3 +25,56 @@
     text-align:center;
     margin:auto;
 }
+
+.partida{
+    border:1px solid red;
+    color:cyan;
+}
+
+.champImg{
+    width:95px;
+    height:95px;
+}
+
+.itemImg{
+    width:55px;
+    height:55px;
+}
+
+.textChamp{
+    font-size:25px;
+}
+
+.championInfo{
+    text-align:center;
+}
+
+.textKDA{
+    font-size:30px;
+    text-align:center;
+    margin:auto;
+}
+
+.result{
+    text-align:left;
+}
+
+.winDiv{
+    text-align:left;
+    background-color:chartreuse;
+    width:25px;
+    height:100%;
+    border:1px solid black;
+}
+
+.loseDiv{
+    text-align:left;
+    background-color:firebrick;
+    width:25px;
+    height:100%;
+    border:1px solid black;
+}
+
+.build{
+    
+}

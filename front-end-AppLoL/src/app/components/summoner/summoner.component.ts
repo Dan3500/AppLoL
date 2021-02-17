@@ -15,8 +15,9 @@ import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 export class SummonerComponent implements OnInit {
 
   public summoner: Summoner;
-  public matches=[];
-  public leagues=[];
+  public matches:any;
+  public leagues:any;
+  public cargar:Boolean;
 
   constructor(public _summonerInfoService:SummonerInfoService,
               private _route:ActivatedRoute,
@@ -25,31 +26,34 @@ export class SummonerComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.cargar=false;
     this._route.params.subscribe(params=>{
       let user=params["name"];
       this._summonerInfoService.obtenerInfoSummoner(user).subscribe(
-        response=>{
-          if (response["status_code"]){
+        responseSummoner=>{
+          if (responseSummoner["status_code"]){
             console.log("Error al encontrar a este invocador");
           }else{
-            this.summoner.img=response["profileIconId"];
-            this.summoner.lvl=response["summonerLevel"];
-            this.summoner.username=response["name"];
-            let accountId=response["accountId"];
-            let summonerId=response["id"];
+            let accountId=responseSummoner["accountId"];
+            let summonerId=responseSummoner["id"];
             this._summonerInfoService.obtenerSummonerMatches(accountId).subscribe(
-              response=>{
-                console.log(response)
-                this.matches=response;
-                this._summonerInfoService.obtenerSummonerLeagues(summonerId).subscribe(
-                  response=>{
-                    this.leagues=response;
-                    console.log(this.leagues)
-                  },
-                  error=>{
-                    console.log(error)
-                  }
-                )
+              responseMatches=>{
+                if (responseMatches){
+                  this._summonerInfoService.obtenerSummonerLeagues(summonerId).subscribe(
+                    response=>{
+                      console.log(responseMatches)
+                      this.summoner.img=responseSummoner["profileIconId"];
+                      this.summoner.lvl=responseSummoner["summonerLevel"];
+                      this.summoner.username=responseSummoner["name"];
+                      this.leagues=response;
+                      this.matches=responseMatches;
+                      this.cargar=true;
+                    },
+                    error=>{
+                      console.log(error)
+                    }
+                  )
+                }
               },
               error=>{
                 console.log(error)

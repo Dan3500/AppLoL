@@ -25,6 +25,8 @@ Route::get("/summoner/{summoner}",[SummonerController::class,'showInfoSummoner']
 
 Route::get("/matches/{summonerId}",[SummonerController::class,'showSummonerMatches']);//Obtener partidas de un invocador
 
+Route::get("/match/{matchId}",[SummonerController::class,'showMatch']);//Obtener la informacion de una partida concreta
+
 Route::get("/leagues/{summonerId}",[SummonerController::class,'showSummonerLeague']);//Obtener partidas de un invocador
 
 //RUTAS DE CHAMPIONS
