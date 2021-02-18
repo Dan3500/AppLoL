@@ -5,54 +5,83 @@
 
 .img{
     text-align:center;
+    position: relative;
+    display: inline-block;
+}
+
+.infoSummoner{
+    margin:auto;
+    text-align: center;
+    color:cyan;
+}
+
+.lvlSummoner{
+    position: absolute;
+    bottom:0px;
+    left: 50%;
+    transform: translate(-50%, -2%);
+    border:1px solid black;
+    background-color: rgba(0, 0, 0, 0.671);
+    border-radius: 20% 20% 0% 0%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.celda{
+    margin:auto;
+    text-align:center;
 }
 
 .imgPerfil{
-    width:200px;
-    height:200px;
+    width:80%;
     border:1px solid black;
     border-radius: 50%;
+    margin:auto;
 }
 
 .imgLiga{
-    width:175px;
-    height:175px;
+    width:40%;
 }
 
 .liga{
     text-align:center;
     color:aqua;
     text-align:center;
-    margin:auto;
+}
+
+.queue{
+    font-weight: bold;
+}
+
+.textoPartidas{
+    text-align: center;
+    color:aqua;
 }
 
 .partida{
-    border:1px solid red;
+    margin:auto;
+    text-align:left;
     color:cyan;
+    border:1px solid black;
 }
 
 .champImg{
-    width:95px;
-    height:95px;
+    width:70%;
+    margin:auto;
+    border:1px solid black;
+}
+
+.champImg:hover{
+    border:1px solid cyan;
 }
 
 .itemImg{
-    width:55px;
-    height:55px;
-}
-
-.textChamp{
-    font-size:25px;
+    width:10%;
+    margin:auto;
 }
 
 .championInfo{
     text-align:center;
-}
-
-.textKDA{
-    font-size:30px;
-    text-align:center;
-    margin:auto;
 }
 
 .result{
@@ -60,21 +89,20 @@
 }
 
 .winDiv{
-    text-align:left;
-    background-color:chartreuse;
-    width:25px;
-    height:100%;
-    border:1px solid black;
+    background-color:rgba(128, 255, 0, 0.37);
+    border-left: 20px solid rgb(128, 255, 0);
+
 }
 
 .loseDiv{
-    text-align:left;
-    background-color:firebrick;
-    width:25px;
-    height:100%;
-    border:1px solid black;
+    background-color:rgba(178, 34, 34, 0.384);
+    border-left: 20px solid rgba(178, 34, 34);
 }
 
+.kda{
+    text-align: center;
+}
 .build{
-    
+    text-align: right;
+    margin:auto;
 }

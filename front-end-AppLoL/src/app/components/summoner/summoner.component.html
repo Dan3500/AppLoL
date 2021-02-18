@@ -1,22 +1,20 @@
 <div class="container-fluid" *ngIf="cargar&&summoner.username!='error'">
     <br>
-    <div class="row">
-        <div class="img col-2">
-            <img class="imgPerfil" src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/profileicon/{{summoner.img}}.png"/>
+    <div class="row infoSummoner align-items-center">
+        <div class="col-lg-2 col-12 celda">
+            <div class="img">
+                <img class="imgPerfil" src="http://ddragon.leagueoflegends.com/cdn/11.2.1/img/profileicon/{{summoner.img}}.png"/>
+                <br>
+                <div class="lvlSummoner">
+                    <h4>{{summoner.lvl}}</h4>
+                </div>
+            </div>
+            <h1 class="mt-2">{{summoner.username}}</h1>
+            <br><br>
         </div>
-        <div class="col-10 nombre">
-            <br>
-            <h1>{{summoner.username}}</h1>
-            <h3>Nivel {{summoner.lvl}}</h3>
-            <br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6 liga" *ngFor="let tier of leagues; index as i">
-            <br>
-            <br>
-            <br><h3 *ngIf="i==0">SOLO QUEUE</h3>
-                <h3 *ngIf="i==1">FLEX QUEUE</h3>
+        <div class="col-lg-4 col-6 liga queue celda" *ngFor="let tier of leagues; index as i">
+            <h4 *ngIf="i==0">SOLO QUEUE</h4>
+            <h4 *ngIf="i==1">FLEX QUEUE</h4>
             <img class="imgLiga" src="../../../assets/ranks/{{tier.tier.toLowerCase()}}.png"><br>
             {{tier.tier}} {{tier.rank}}<br>
             {{tier.leaguePoints}} LP<br>
@@ -25,39 +23,57 @@
     </div>
     <br>
     <br>
-    <h3 class="nombre">PARTIDAS</h3>
-    <br>
+    <h3 class="textoPartidas mb-20">PARTIDAS</h3><br>
     <div class="row">
-        <div class="col-12 partida" *ngFor="let match of matches">
-            <div class="row">
-                <div class="col-1" *ngIf="match.stats.playerStats.win">
-                    <div class="winDiv"></div>
+        <div class="col-12 col-lg-10 partida" *ngFor="let match of matches">
+            <div class="row winDiv align-items-center" *ngIf="match.stats.playerStats.win">
+                <div class="col-lg-2 col-3">
+                    <a [routerLink]="['/champion',match.champion.id]"><img src="{{match.champion.img}}" class="champImg"></a>
                 </div>
-                <div class="col-1" *ngIf="!match.stats.playerStats.win">
-                    <div class="loseDiv"></div>
+                <div class="col-lg-2 col-1">
+                    <div class="kda">
+                        <h6>{{match.stats.playerStats.kills}}/{{match.stats.playerStats.deaths}}/{{match.stats.playerStats.assists}}</h6>
+                    </div>
                 </div>
-                <div class="col-2 championInfo">
-                    <img src="{{match.champion.img}}" class="champImg">
-                    <p class="textChamp">{{match.champion.name}}</p>
-                </div>
-                <div class="col-3">
-                    <p class="textKDA">{{match.stats.playerStats.kills}}/{{match.stats.playerStats.deaths}}/{{match.stats.playerStats.assists}}</p>
-                </div>
-                <div class="col-6 build">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item0}}.png" class="itemImg"
+                <div class="col-lg-8 col build">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item0}}.png" class="itemImg"
                         *ngIf="match.stats.playerStats.items.item0">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item1}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item1">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item2}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item2">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item3}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item3">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item4}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item4">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item5}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item5">
-                    <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item6}}.png" class="itemImg"
-                        *ngIf="match.stats.playerStats.items.item6">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item1}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item1">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item2}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item2">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item3}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item3">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item4}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item4">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item5}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item5">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item6}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item6">
+                </div>
+            </div>
+            <div class="row loseDiv align-items-center" *ngIf="!match.stats.playerStats.win">
+                <div class="col-lg-2 col-3">
+                    <a [routerLink]="['/champion',match.champion.id]"><img src="{{match.champion.img}}" class="champImg"></a>
+                </div>
+                <div class="col-lg-2 col-1 kda">
+                    <h6>{{match.stats.playerStats.kills}}/{{match.stats.playerStats.deaths}}/{{match.stats.playerStats.assists}}</h6>
+                </div>
+                <div class="col-lg-8 col build">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item0}}.png" class="itemImg"
+                        *ngIf="match.stats.playerStats.items.item0">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item1}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item1">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item2}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item2">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item3}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item3">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item4}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item4">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item5}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item5">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/item/{{match.stats.playerStats.items.item6}}.png" class="itemImg"
+                            *ngIf="match.stats.playerStats.items.item6">
                 </div>
             </div>
         </div>

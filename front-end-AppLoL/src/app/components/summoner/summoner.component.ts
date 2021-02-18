@@ -34,19 +34,19 @@ export class SummonerComponent implements OnInit {
           if (responseSummoner["status_code"]){
             console.log("Error al encontrar a este invocador");
           }else{
+            this.summoner.img=responseSummoner["profileIconId"];
+            this.summoner.lvl=responseSummoner["summonerLevel"];
+            this.summoner.username=responseSummoner["name"];
             let accountId=responseSummoner["accountId"];
             let summonerId=responseSummoner["id"];
             this._summonerInfoService.obtenerSummonerMatches(accountId).subscribe(
               responseMatches=>{
                 if (responseMatches){
+                  this.matches=responseMatches;
                   this._summonerInfoService.obtenerSummonerLeagues(summonerId).subscribe(
                     response=>{
                       console.log(responseMatches)
-                      this.summoner.img=responseSummoner["profileIconId"];
-                      this.summoner.lvl=responseSummoner["summonerLevel"];
-                      this.summoner.username=responseSummoner["name"];
                       this.leagues=response;
-                      this.matches=responseMatches;
                       this.cargar=true;
                     },
                     error=>{
