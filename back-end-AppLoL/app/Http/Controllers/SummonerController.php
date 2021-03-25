@@ -44,7 +44,7 @@ class SummonerController extends Controller
         $queues=json_decode($queues->getBody()->getContents());
 
         //TODOS LOS DATOS DE TODOS LOS CAMPEONES
-        $urlChampions="http://ddragon.leagueoflegends.com/cdn/11.3.1/data/es_ES/champion.json";
+        $urlChampions="http://ddragon.leagueoflegends.com/cdn/11.6.1/data/es_ES/champion.json";
         $champions=$client->request("GET",$urlChampions,['verify' => false,
         'headers' => [
             'X-Riot-Token' => $api->getToken()
@@ -79,7 +79,7 @@ class SummonerController extends Controller
                     if ($match->champion==$champion->key){
                         $champArray["id"]=$champion->id;
                         $champArray["name"]=$champion->name;
-                        $champArray["img"]="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/champion/{$champion->id}.png";
+                        $champArray["img"]="http://ddragon.leagueoflegends.com/cdn/11.6.1/img/champion/{$champion->id}.png";
                         break;
                     }
                 }

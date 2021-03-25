@@ -12,7 +12,7 @@ class ChampionsController extends Controller
 {
     public function showAll($show){
         $api=new Riot_API();
-        $url=$api->getDataUrl()."/11.3.1/data/es_ES/champion.json";
+        $url=$api->getDataUrl()."/11.6.1/data/es_ES/champion.json";
 
         $client=new Client();
 
@@ -42,7 +42,7 @@ class ChampionsController extends Controller
 
     public function showChamp($champName){
         $api=new Riot_API();
-        $url=$api->getDataUrl()."/11.3.1/data/es_ES/champion/$champName.json";
+        $url=$api->getDataUrl()."/11.6.1/data/es_ES/champion/$champName.json";
 
         $client=new Client();
 
