@@ -1,7 +1,7 @@
 # AppLoL
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.
-A SPA Application about League of Legends. As a player of the game League of Legends, I investigated how could I get public information from riot games, and I realized that riot has a public API where you can find a lot of information about their games, so I decided to build a SPA for practice my knowledge about the frameworks I was studying and how to work with APIS (I'm a junior programmer and I wanna learn and improve in this world). The web application will show a summary of each champion and summoner of EUW (probably I will build it to other regions too) with the API information. Also, you will can register and log in in the app for link your summoner name with your account in the web application.
+A SPA Application about League of Legends. As a player of the game League of Legends, I investigated how could I get public information from riot games, and I realized that riot has a public API where you can find a lot of information about their games, so I decided to build a SPA for practice my knowledge about the frameworks I was studying and how to work with APIS (I'm a junior programmer and I wanna learn and improve in this world). The web application will show a summary of each champion and summoner of EUW (probably I will build it to other regions too) with the API information. Also, you will can register and log in in the app for link your summoner name with your account in the web application. You can see the application launched clicking this link: http://leagueofpros.danielsoltero.com/
 
 # Internal structure
 
